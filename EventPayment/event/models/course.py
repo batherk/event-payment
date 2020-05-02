@@ -3,7 +3,7 @@ from event.models.abstract_event import AbstractEvent
 from enumchoicefield import EnumChoiceField
 from EventPayment.enums import Day
 
-class Class(AbstractEvent):
+class Course(AbstractEvent):
 
     week_start = models.IntegerField()
     week_end = models.IntegerField()
