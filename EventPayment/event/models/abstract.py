@@ -4,8 +4,7 @@ class AbstractEvent(models.Model):
 
     name = models.CharField(max_length=80)
     description = models.CharField(max_length=300)
-    address = models.CharField(max_length=80)
-    max_amount = models.IntegerField()
+    address = models.CharField(max_length=80, default="https://goo.gl/maps/NdrHbAVgVRkX6STg7")
     
 
     class Meta:

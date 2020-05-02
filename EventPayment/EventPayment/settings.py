@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'event'
+    'event.apps.EventConfig',
+    'pass_type.apps.PassTypeConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [

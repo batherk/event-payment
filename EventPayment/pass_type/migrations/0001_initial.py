@@ -2,6 +2,7 @@
 
 import EventPayment.enums
 from django.db import migrations, models
+import django.db.models.deletion
 import enumchoicefield.fields
 
 
@@ -10,38 +11,38 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('event', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name='EventPass',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=80)),
                 ('description', models.CharField(max_length=300)),
-                ('address', models.CharField(default='https://goo.gl/maps/NdrHbAVgVRkX6STg7', max_length=80)),
-                ('week_start', models.IntegerField()),
-                ('week_end', models.IntegerField()),
-                ('day', enumchoicefield.fields.EnumChoiceField(enum_class=EventPayment.enums.Day, max_length=9)),
-                ('time_start', models.TimeField()),
-                ('time_end', models.TimeField()),
+                ('price', models.IntegerField()),
+                ('role', enumchoicefield.fields.EnumChoiceField(enum_class=EventPayment.enums.Role, max_length=8)),
+                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='event.Event')),
             ],
             options={
-                'abstract': False,
+                'verbose_name': 'Event pass',
+                'verbose_name_plural': 'Event passes',
             },
         ),
         migrations.CreateModel(
-            name='Event',
+            name='CoursePass',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=80)),
                 ('description', models.CharField(max_length=300)),
-                ('address', models.CharField(default='https://goo.gl/maps/NdrHbAVgVRkX6STg7', max_length=80)),
-                ('date_start', models.DateField()),
-                ('date_end', models.DateField()),
+                ('price', models.IntegerField()),
+                ('role', enumchoicefield.fields.EnumChoiceField(enum_class=EventPayment.enums.Role, max_length=8)),
+                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='event.Course')),
             ],
             options={
-                'abstract': False,
+                'verbose_name': 'Course pass',
+                'verbose_name_plural': 'Course passes',
             },
         ),
     ]

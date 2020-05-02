@@ -8,3 +8,10 @@ class Day(ChoiceEnum):
     friday = "Friday"
     saturday = "Saturday"
     sunday = "Sunday"
+
+
+class Role(ChoiceEnum):
+    leader = "Leader"
+    follower = "Follower"
+    couple = "Couple"
+    solo = "Solo"
