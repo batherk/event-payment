@@ -6,5 +6,6 @@ from pass_type.models.course import CoursePass
 class CoursePassAdmin(admin.ModelAdmin):
     fields = ("role","price","event", "max_amount","get_remaining_spots")
     list_display = ("role", "price", "event", "max_amount", "get_remaining_spots")
+    list_filter = ("event",)
     readonly_fields = ("get_remaining_spots",)
     raw_id_fields = ("event",)

@@ -6,5 +6,6 @@ from payment.models import CoursePassPayment
 class CoursePassPaymentAdmin(admin.ModelAdmin):
     fields = ("pass_type", "price","paid","buyer_name","buyer_phone","buyer_email")
     list_display = ("buyer_email", "buyer_name", "pass_type", "paid")
+    list_filter = ("pass_type",)
     raw_id_fields = ("pass_type",)
     readonly_fields = ("price",)
