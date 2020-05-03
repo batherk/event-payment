@@ -13,8 +13,5 @@ class CoursePassPayment(AbstractPassPayment):
         verbose_name = "Course payment"
         verbose_name_plural = "Course payments"
 
-    def __str__(self):
-        return f"Payment from {self.buyer_name} for {self.pass_type}"
-
     def get_pass_type(self):
         return self.pass_type

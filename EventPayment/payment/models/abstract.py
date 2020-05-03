@@ -15,5 +15,8 @@ class AbstractPassPayment(models.Model):
             self.price = self.get_pass_type().price
         super(AbstractPassPayment, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return f"Payment from {self.buyer_name} for {self.get_pass_type()}"
+
     def get_pass_type(self):
         raise NotImplementedError("Extending class must implement this method")
