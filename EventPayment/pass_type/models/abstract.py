@@ -7,7 +7,7 @@ class AbstractPass(models.Model):
 
     price = models.IntegerField()
     role = EnumChoiceField(enum_class=Role)
-    max_amount = models.IntegerField()
+    total_spots = models.IntegerField()
 
     class Meta:
         abstract = True
@@ -20,6 +20,6 @@ class AbstractPass(models.Model):
         return getattr(self,payments_related_name)
 
 
-    def get_remaining_spots(self):
-        return self.max_amount - len(self.get_payments().filter(paid=True))
+    def remaining_spots(self):
+        return self.total_spots - len(self.get_payments().filter(paid=True))
 
