@@ -8,6 +8,6 @@ from pass_type.admin.filters import PassFullFilter, EventTimeFilter
 class EventPassAdmin(admin.ModelAdmin):
     fields = ("name", "description","role","price","event", "total_spots", "remaining_spots", "full")
     list_display = ("name","role","price","event", "total_spots", "remaining_spots", "full")
-    list_filter = (("role",EnumListFilter), PassFullFilter, EventTimeFilter)
+    list_filter = (EventTimeFilter, ("role",EnumListFilter), PassFullFilter,)
     readonly_fields = ("remaining_spots", "full")
     raw_id_fields = ("event",)
