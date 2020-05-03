@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 class AbstractPassPayment(models.Model):
@@ -32,3 +33,8 @@ class AbstractPassPayment(models.Model):
     @property
     def event(self):
         return self.get_pass_type().event
+
+    def clean(self):
+        if self.get_pass_type().full():
+            raise ValidationError(f"You cannot pay for this item. There are no {self.get_pass_type()} left.")
+
