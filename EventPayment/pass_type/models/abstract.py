@@ -19,7 +19,11 @@ class AbstractPass(models.Model):
         payments_related_name = f"{self.get_event()._meta.model_name}_payments"
         return getattr(self,payments_related_name)
 
-
     def remaining_spots(self):
-        return self.total_spots - len(self.get_payments().filter(paid=True))
+        return self.total_spots - len(self.get_payments().filter(paid_manually=True))
+
+    def full(self):
+        return self.remaining_spots() == 0
+
+    full.boolean = True
 
