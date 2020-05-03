@@ -20,3 +20,11 @@ class AbstractPassPayment(models.Model):
 
     def get_pass_type(self):
         raise NotImplementedError("Extending class must implement this method")
+
+    @property
+    def role(self):
+        return self.get_pass_type().role
+
+    @property
+    def event(self):
+        return self.get_pass_type().event
