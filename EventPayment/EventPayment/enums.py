@@ -15,14 +15,3 @@ class Role(ChoiceEnum):
     follower = "Follower"
     couple = "Couple"
     solo = "Solo"
-
-    @classmethod
-    def all(cls):
-        return [role for role in cls]
-
-    @classmethod
-    def get_role(cls,string):
-        for role in cls.all():
-            if role.name == string:
-                return role
-        return None
