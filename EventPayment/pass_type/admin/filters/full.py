@@ -1,9 +1,7 @@
-
 from django.contrib.admin import SimpleListFilter
 
-from EventPayment.enums import Role
 
-class EventPassFullFilter(SimpleListFilter):
+class PassFullFilter(SimpleListFilter):
     title = 'full'
     parameter_name = 'full'
 

@@ -1,6 +1,7 @@
 from django.db import models
 from enumchoicefield import EnumChoiceField
 
+from pass_type.querysets.passes import PassQuerySet
 from EventPayment.enums import Role
 
 class AbstractPass(models.Model):
@@ -8,6 +9,8 @@ class AbstractPass(models.Model):
     price = models.IntegerField()
     role = EnumChoiceField(enum_class=Role)
     total_spots = models.IntegerField()
+
+    objects = PassQuerySet.as_manager()
 
     class Meta:
         abstract = True
