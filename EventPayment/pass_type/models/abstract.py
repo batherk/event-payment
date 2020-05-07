@@ -23,10 +23,10 @@ class AbstractPass(models.Model):
         return getattr(self,payments_related_name)
 
     def remaining_spots(self):
-        return self.total_spots - len(self.get_payments().filter(paid_manually=True))
+        return self.total_spots - self.get_payments().count()
 
-    def full(self):
+    def sold_out(self):
         return self.remaining_spots() == 0
 
-    full.boolean = True
+    sold_out.boolean = True
 

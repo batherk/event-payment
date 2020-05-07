@@ -2,15 +2,15 @@ from django.contrib.admin import SimpleListFilter
 
 
 class PassFullFilter(SimpleListFilter):
-    title = 'full'
-    parameter_name = 'full'
+    title = 'sold out'
+    parameter_name = 'sold out'
 
     def lookups(self, request, model_admin):
         return (("T","True"), ("F","False"))
 
     def queryset(self, request, queryset):
         if self.value() == "T":
-            return queryset.full()
+            return queryset.sold_out()
         elif self.value() == "F": 
-            return queryset.not_full()
+            return queryset.passes_left()
         return queryset
