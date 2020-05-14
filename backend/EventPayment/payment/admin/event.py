@@ -9,4 +9,4 @@ class EventPassPaymentAdmin(admin.ModelAdmin):
     list_display = ("buyer_email", "buyer_name", "event", "role", "paid_online",)
     list_filter = (EventPaymentTimeFilter, PaymentRoleFilter,)
     raw_id_fields = ("pass_type",)
-    readonly_fields = ("price",)
+    readonly_fields = ("price","paid_online")

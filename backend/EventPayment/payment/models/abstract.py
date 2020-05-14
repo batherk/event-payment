@@ -31,6 +31,6 @@ class AbstractPassPayment(models.Model):
         return self.get_pass_type().event
 
     def clean(self):
-        if self.get_pass_type().full():
+        if self.get_pass_type().sold_out():
             raise ValidationError(f"You cannot pay for this item. There are no {self.get_pass_type()} left.")
 
