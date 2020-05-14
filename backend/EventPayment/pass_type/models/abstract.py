@@ -1,5 +1,7 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from enumchoicefield import EnumChoiceField
+
 
 from pass_type.querysets.passes import PassQuerySet
 from EventPayment.enums import Role
@@ -26,7 +28,11 @@ class AbstractPass(models.Model):
         return self.total_spots - self.get_payments().count()
 
     def sold_out(self):
-        return self.remaining_spots() == 0
+        return self.remaining_spots() <= 0
+
+    def clean(self):
+        if self.total_spots < self.get_payments().count():
+            raise ValidationError(f"There cannot be less total spots than people who have already paid for it. Minimum total spots should be {self.get_payments().count()}.")
 
     sold_out.boolean = True
 
