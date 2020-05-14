@@ -7,4 +7,5 @@ class EventPassPaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = EventPassPayment
-        fields = ('__all__')
+        fields = ('pass_type','buyer_name', 'buyer_email', 'buyer_phone')
+        read_only_fields = ('price','paid_manually')
