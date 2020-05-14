@@ -5,7 +5,7 @@ from payment.views import EventPassPaymentViewSet, CoursePassPaymentViewSet
 
 router = routers.DefaultRouter()
 router.register(r"eventpayments", EventPassPaymentViewSet, basename="eventpayments")
-router.register(r"classpayments", CoursePassPaymentViewSet, basename="classpayments")
+router.register(r"coursepayments", CoursePassPaymentViewSet, basename="coursepayments")
 
 
 urlpatterns = [

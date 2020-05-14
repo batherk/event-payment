@@ -5,7 +5,7 @@ from pass_type.views import EventPassViewSet, CoursePassViewSet
 
 router = routers.DefaultRouter()
 router.register(r"eventpasses", EventPassViewSet, basename="eventpasses")
-router.register(r"classpasses", CoursePassViewSet, basename="classpasses")
+router.register(r"coursepasses", CoursePassViewSet, basename="coursepasses")
 
 
 urlpatterns = [

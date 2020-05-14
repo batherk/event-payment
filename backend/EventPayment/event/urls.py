@@ -5,7 +5,7 @@ from event.views import EventViewSet, CourseViewSet
 
 router = routers.DefaultRouter()
 router.register(r"events", EventViewSet, basename="events")
-router.register(r"classes", CourseViewSet, basename="classes")
+router.register(r"courses", CourseViewSet, basename="courses")
 
 
 urlpatterns = [
