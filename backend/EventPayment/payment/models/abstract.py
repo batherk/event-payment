@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 class AbstractPassPayment(models.Model):
 
     price = models.IntegerField()
-    paid_manually = models.BooleanField(default=False)
+    paid_online = models.BooleanField(default=False)
 
     buyer_name = models.CharField(max_length=80)
     buyer_phone = models.CharField(max_length=80)
@@ -21,10 +21,6 @@ class AbstractPassPayment(models.Model):
 
     def get_pass_type(self):
         raise NotImplementedError("Extending class must implement this method")
-
-    def paid(self):
-        return self.paid_manually
-    paid.boolean = True
 
     @property
     def role(self):
