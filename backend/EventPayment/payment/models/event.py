@@ -14,3 +14,11 @@ class EventPassPayment(AbstractPassPayment):
 
     def get_pass_type(self):
         return self.pass_type
+
+    @classmethod
+    def create(cls, data):
+        cls.pay_online(**data)
+
+        data['paid_online'] = True
+        payment = EventPassPayment(**data)
+        payment.save()
