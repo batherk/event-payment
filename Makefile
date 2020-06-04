@@ -26,7 +26,7 @@ migrate: ##@Docker Perform migrations to database
 	@echo "Migrate completed successfully"
 
 load-data: ##@Docker Perform migrations to database
-	docker-compose run backend python backend/EventPayment/manage.py loaddata fixtures.json
+	docker-compose run backend python backend/EventPayment/manage.py loaddata backend/EventPayment/fixtures.json
 	@echo "Data loaded successfully"
 
 dev-clean-install: ##@TestEnv Delete the old database and re-apply testdata
