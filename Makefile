@@ -35,4 +35,4 @@ dev-clean-install: ##@TestEnv Delete the old database and re-apply testdata
 	make force-makemigrations
 	make migrate
 	make load-data
-	make start
+	make s

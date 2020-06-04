@@ -8,3 +8,8 @@ services:
       - .:/backend
     ports:
       - "8000:8000"
+    depends_on:
+    - db
+  db:
+    image: postgres
+
