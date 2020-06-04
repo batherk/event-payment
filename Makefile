@@ -1,12 +1,12 @@
 #---- COMMANDS ----#
 
-s: ##@Docker (start) Start the webserver on http://localhost:8000
+up: ##@Docker (start) Start the webserver on http://localhost:8000
 	docker-compose up
 
-start: ##@Docker (start) Start the webserver on http://localhost:8000
+up-build: ##@Docker (start) Start the webserver on http://localhost:8000
 	docker-compose up --build
 
-start-d: ##@Docker (start) Start the webserver on http://localhost:8000, in the background
+up-d: ##@Docker (start) Start the webserver on http://localhost:8000, in the background
 	docker-compose up -d
 
 down:
@@ -35,4 +35,4 @@ dev-clean-install: ##@TestEnv Delete the old database and re-apply testdata
 	make force-makemigrations
 	make migrate
 	make load-data
-	make s
+	make up

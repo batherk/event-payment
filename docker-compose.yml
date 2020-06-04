@@ -12,4 +12,15 @@ services:
     - db
   db:
     image: postgres
+  frontend:
+    build: ./frontend/
+    stdin_open: true
+    command: npm start --prefix frontend/event-payment
+    volumes:
+      - .:/event-payment
+    ports:
+      - "3000:3000"
+    depends_on:
+    - backend
+
 
