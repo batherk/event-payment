@@ -1,6 +1,6 @@
 import React from 'react';
 import './../../App.css';
-import { Parallax } from '../../Components/js'
+import { Parallax, CourseList } from '../../Components/js'
 
 export default ()=>{
 
@@ -10,6 +10,10 @@ export default ()=>{
         const imageSide = "left"
 
   return (
-        <Parallax imageSide={imageSide} title={title} text={text} imageURL={imageURL}/>
+      <div className='course-page'>
+            <Parallax imageSide={imageSide} title={title} text={text} imageURL={imageURL}/>
+            <CourseList/>
+      </div>
+      
   );
 }
