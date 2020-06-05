@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Home, Course } from './Pages/js'
+import { Home, CourseList, EventList } from './Pages/js'
 import { Hamburger } from './Components/js'
-import { BrowserRouter as Router, Switch, Link, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 export default ()=>{
 
@@ -12,7 +12,8 @@ export default ()=>{
         <Hamburger/>
         <Switch>
           <Route path='/' exact component={Home}/>
-          <Route path='/course' component={Course}/>
+          <Route path='/courses' component={CourseList}/>
+          <Route path='/events' component={EventList}/>
         </Switch>
       </div>
     </Router>

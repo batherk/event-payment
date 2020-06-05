@@ -1,5 +1,6 @@
 import React, { useState, useContext} from 'react';
 import './../styles/HamburgerMenu.css'
+import { Link } from 'react-router-dom'
 
 
 export default ()=>{
@@ -10,8 +11,15 @@ export default ()=>{
         <div className="menu">
             <div className="category">
                 <ul className="event-types">
-                    <li className={page==="Events"? "current" : "other"}>Events</li>
-                    <li className={page==="Courses"? "current" : "other"}>Courses</li>
+                    <Link to='/'>
+                        <li className={page==="Events"? "current" : "other"}>Home</li>
+                    </Link>
+                    <Link to='/events'>
+                        <li className={page==="Events"? "current" : "other"}>Events</li>
+                    </Link>
+                    <Link to='/courses'>
+                        <li className={page==="Events"? "current" : "other"}>Courses</li>
+                    </Link>
                 </ul>
             </div>
         </div>

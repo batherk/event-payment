@@ -1,6 +1,6 @@
 import React from 'react';
 import './../../App.css';
-import { Parallax } from './../../Components/js'
+import { Parallax } from '../../Components/js'
 
 export default ()=>{
 

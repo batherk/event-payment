@@ -1,12 +1,12 @@
 import React from 'react';
 import './../../App.css';
-import { Parallax } from './../../Components/js'
+import { Parallax } from '../../Components/js'
 
 export default ()=>{
 
-        const title = 'Salsa events and courses'
+        const title = 'Course list'
         const imageURL= 'Profil.jpg'
-        const text= "This is a website for finding possible dance events and courses."
+        const text= ""
         const imageSide = "left"
 
   return (

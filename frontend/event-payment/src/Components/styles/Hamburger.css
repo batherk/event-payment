@@ -130,7 +130,7 @@ div.hamburger-cont div.hamburger{
     clip-path: circle(30px at calc(100% - 35px) 30px);
     -webkit-clip-path: circle(30px at calc(100% - 35px) 30px);
     max-height: calc(100vh - 40px);
-    min-width: 40vw;
+    min-width: 20vw;
     max-width: 90vw;
   }
 
