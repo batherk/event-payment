@@ -1,0 +1,161 @@
+div.hamburger-cont{
+    position: fixed;
+    z-index:1;
+    height: auto;
+    background-color:transparent;
+    border-radius: 10px;
+    transition: var(--transition);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+  
+div.hamburger-cont div.hamburger{
+  position: fixed;
+  z-index: 2;
+  width:50px;
+  height:50px; 
+  background:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Center line*/
+.hamburger-cont .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  display: flex;
+  transition: var(--transition);
+}
+
+/*Top and bottom line*/
+.hamburger-cont .hamburger > div:before,
+.hamburger-cont .hamburger > div:after{
+  content:'';
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+
+/*Moves bottom line down*/
+.hamburger-cont .hamburger > div:after{
+  top: 10px;
+}
+
+.hamburger-cont .hamburger > div:before{
+  top: -10px;
+}
+
+/* Touch device (coarse,none) and Mouse device (fine) */
+
+/* Touch device*/
+@media (pointer:coarse), (pointer:none){
+  div.hamburger-cont.menu-open{
+    clip-path: circle(100%);
+    -webkit-clip-path: circle(100%);
+    background-color: black;
+    transition: var(--transition);  
+  }
+
+  div.hamburger-cont.menu-open div.menu{
+    display:flex;
+  }
+
+  div.hamburger-cont div.menu{
+    display:none;
+  }
+
+  div.hamburger-cont > div.hamburger > div,
+  div.hamburger-cont > div.hamburger > div:before, 
+  div.hamburger-cont > div.hamburger > div:after{
+    transition: var(--transition);
+  }
+    
+  div.hamburger-cont.menu-open > .hamburger > div{
+    transform: rotate(135deg);
+    transition: var(--transition);
+  }
+    
+  div.hamburger-cont.menu-open > .hamburger > div:before, 
+  div.hamburger-cont.menu-open > .hamburger > div:after{
+    top: 0;
+    transform: rotate(90deg);
+    transition: var(--transition)
+  }
+  
+  div.hamburger-cont.menu-open + div.content div.parallax > div.text-box > h2,
+  div.hamburger-cont.menu-open + div.content div.parallax > div.text-box > p > a{
+    color:white;
+  }
+}
+
+/* Device with mouse */ 
+@media (pointer:fine){
+  div.hamburger-cont:hover{
+    clip-path: circle(100%);
+    -webkit-clip-path: circle(100%);
+    background-color: black;
+    transition: var(--transition);
+  }
+
+  div.hamburger-cont:hover div.hamburger > div{
+    background-color: transparent;
+    transition: var(--transition);
+  }
+
+  div.hamburger-cont:hover + div.content{
+    filter: blur(5px);
+    transition: var(--transition);
+  }
+  
+  div.hamburger-cont:hover + div.content div.parallax > div.text-box > h2,
+  div.hamburger-cont:hover + div.content div.parallax > div.text-box > p > a{
+    color:white;
+  }
+}
+
+
+
+/* Orientation and size */
+
+@media (orientation:landscape), (min-width:501px){
+  div.hamburger-cont{
+    top:20px;
+    right:30px;
+    clip-path: circle(30px at calc(100% - 35px) 30px);
+    -webkit-clip-path: circle(30px at calc(100% - 35px) 30px);
+    max-height: calc(100vh - 40px);
+    min-width: 40vw;
+    max-width: 90vw;
+  }
+
+  div.hamburger-cont div.hamburger{
+    top: 25px;
+    right: 40px;
+  }
+  div.hamburger-cont.menu-open + div.content{
+    filter: blur(5px);
+  }
+}
+
+@media (orientation:portrait) and (max-width:500px){
+  div.hamburger-cont{
+    top:10px;
+    right:15px;
+    clip-path: circle(30px at calc(100% - 35px) 30px);
+    -webkit-clip-path: circle(30px at calc(100% - 35px) 30px);
+    max-height: calc(100vh - 20px);
+    width: calc(100vw - 30px);
+  }
+
+  div.hamburger-cont div.hamburger{
+    top: 15px;
+    right: 20px;
+  }
+}
+

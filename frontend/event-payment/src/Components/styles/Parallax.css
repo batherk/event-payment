@@ -1,0 +1,82 @@
+
+/* Screen specific */
+
+@media (orientation:portrait){
+    div.parallax{
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        justify-content: space-evenly;
+    }
+
+    div.parallax > div.image{
+        width: calc(100vw - 20px);
+        height: 60vh;
+    }
+
+    div.parallax > div.text-box{
+        max-width:80vw;
+        min-height: 30vh;
+    }
+}
+
+@media(orientation:landscape){
+    div.parallax > div.image, div.parallax > div.text-box{
+        height: 80%;
+    }
+    div.parallax > div.image{
+        width: 40vw;
+    }
+
+    div.parallax > div.text-box{
+        width: 40vw;
+    }
+
+    div.parallax{
+        flex-direction:row;
+        justify-content: space-evenly;
+        height: 80vh;
+        align-items: center;
+    }
+
+    div.parallax[image-side="right"]{
+        flex-direction: row-reverse;
+    }
+
+}
+
+
+/* General */
+
+div.parallax{
+    display: flex;
+    max-width: 100%;
+    width: 100vw;
+}
+
+
+div.parallax > div.text-box{
+    filter:none;
+    transition: var(--transition);
+}
+
+
+
+/* Touch device (coarse,none) and Mouse device (fine) */
+
+@media (pointer:fine){
+    div.parallax > div.image:hover + div.text-box p, div.parallax > div.image:hover + div.text-box h2,
+    div.parallax > div.image:hover + div.text-box a{
+        color: white;
+        transition: var(--transition);
+    }
+
+    div.parallax > div.image:hover + div.text-box{
+        filter:blur(5px);
+        transition: var(--transition);
+        scale:0.95;
+    }
+}
+
+
+

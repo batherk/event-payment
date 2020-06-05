@@ -1,0 +1,53 @@
+.text-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
+.text-box__header{
+    font-weight: 50;
+    color:var(--primary-color);
+    transition: var(--transition);
+    margin:0.3em 0;
+}
+
+.text-box__text{
+    margin: 0.3em 0;
+}
+
+.text-box__text > p:first-child{
+    margin-top: 0px;
+}
+
+.text-box__text  > p:last-child{
+    margin-bottom: 0px;
+}
+
+
+
+.text-box__text li{
+    text-align: left;
+}
+
+@media (orientation:portrait){
+    .text-box__header{
+        font-size: 30px;
+    }
+    
+    .text-box__text{
+        font-size: 15px;
+    }
+}
+
+@media (orientation:landscape){
+    .text-box__header{
+        font-size: 50px;
+    }
+    
+    .text-box__text{
+        font-size: 20px;
+    }
+}
+
+

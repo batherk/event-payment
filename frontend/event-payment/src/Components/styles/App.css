@@ -1,0 +1,25 @@
+div.content{
+  text-align: center;
+  width: 100vw;  
+  transition: var(--transition);
+}
+
+div.content div.parallax{
+  transition: var(--transition)
+}
+
+.content .parallax:first-child{
+  padding-top: 10px;
+}
+
+.content .parallax:last-child{
+  padding-bottom: 10px;
+}
+
+div.App{
+  min-height:100vh;
+  min-width: 100vw;
+  background: url(/img/twill.jpg) fixed;
+}
+
+

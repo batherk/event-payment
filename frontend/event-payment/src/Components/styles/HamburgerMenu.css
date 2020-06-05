@@ -1,0 +1,103 @@
+div.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}  
+
+div.menu > div.category{
+    margin: 5px 0px;
+    display:flex;
+    width: 100%;
+}
+
+div.menu > div.category > div.header-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.menu > div.category > div.header-container h3{
+    font-size: 30px;
+    margin: 0.5em 0;
+}
+
+div.menu > div.category > ul{
+    width: 70%;
+    margin: 0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* List items*/
+div.menu li{
+    text-decoration: none;
+    color: var(--primary-color-darkest);
+    list-style-type: none;
+    margin: 0px 1px;
+    font-size: 30px;
+  }
+  
+  div.menu li.current{
+    cursor:default;
+    color:var(--primary-color);
+  }
+
+  div.menu li.other{
+    cursor: pointer;
+  }
+  
+  
+  div.menu li:hover{
+    color:var(--primary-color-lighter);
+  }
+  
+
+/* Relative to screen width */
+
+@media screen and (max-width: 500px){
+    div.menu > div.category{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.menu > div.category > div.header-container > h3{
+        text-align: center;
+    }
+
+    div.menu > div.category > ul > li{
+        text-align: center;
+    }
+    div.menu > div.category > div.header-container{
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 501px){
+
+    div.menu{
+        padding: 0 1em;
+    }
+
+    div.menu > div.category{
+        flex-direction: row;
+    }
+
+    div.menu > div.category > div.header-container h3{
+        text-align: right;
+    }
+
+    div.menu > div.category > ul > li{
+        text-align: left;
+    }
+
+    div.menu > div.category > div.header-container{
+        margin-right: 10px;
+        width: 30%;
+    }
+}
