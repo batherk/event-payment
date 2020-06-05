@@ -1,4 +1,5 @@
 .pass-type-list{
+    padding: 10vh 0;
     display: flex;
     flex-direction: row;
     width: 100%;
