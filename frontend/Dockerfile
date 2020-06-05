@@ -1,7 +1,10 @@
 FROM node:alpine
 
-RUN mkdir /event-payment
 WORKDIR /event-payment
-COPY . /event-payment/
+COPY /event-payment/package.json .
 
 RUN npm install
+
+COPY /event-payment .
+
+

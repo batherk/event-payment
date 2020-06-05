@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 import './../styles/App.css';
-import {Parallax, Hamburger, PassTypeList} from '.'
+import {Parallax, Hamburger, PassTypeList} from '.';
+import { BaseRouter } from 'react-router-dom';
 
 
 export const PageContext = createContext(null);

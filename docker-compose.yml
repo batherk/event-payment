@@ -18,6 +18,7 @@ services:
     command: npm start --prefix frontend/event-payment
     volumes:
       - .:/event-payment
+      - event-payment/node_modules
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
