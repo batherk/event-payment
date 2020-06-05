@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React from 'react';
 import './../styles/HamburgerMenu.css'
 import { Link } from 'react-router-dom'
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from 'react';
 import './../styles/PassType.css'
-import { Image } from '.'
 
 
 export default (props) => {
