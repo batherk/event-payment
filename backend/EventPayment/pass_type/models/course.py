@@ -5,7 +5,7 @@ from event.models import Course
 
 class CoursePass(AbstractPass):
 
-    event = models.ForeignKey(Course, on_delete=models.CASCADE)
+    event = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="passes")
 
     class Meta:
         verbose_name = "Course pass"

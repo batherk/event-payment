@@ -1,2 +1,2 @@
 from .event import EventSerializer
-from .course import CourseSerializer
+from .course import CourseSerializer, CourseWithPassesSerializer
