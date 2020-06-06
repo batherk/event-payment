@@ -18,7 +18,7 @@ export default ({match})=>{
 
   return (
       <div className="course-page">
-            <PassList/>
+            <PassList passes={course.passes}/>
             <Parallax title={course.name} imageSide="left" imageURL="Talal.jpg" text={text}/> 
       </div>
       
