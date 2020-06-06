@@ -1,7 +1,29 @@
 .pass-list{
-    padding: 5% 5%;
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: space-evenly;
+}
+
+/* one item */
+.pass:first-child:nth-last-child(1) {
+/* -or- li:only-child { */
+    width: 80%;
+}
+
+/* two items */
+.pass:first-child:nth-last-child(2),
+.pass:first-child:nth-last-child(2) ~ .pass {
+    width: 40%;
+}
+
+/* three items */
+.pass:first-child:nth-last-child(3),
+.pass:first-child:nth-last-child(3) ~ .pass {
+    width: 30%;
+}
+
+/* four items */
+.pass:first-child:nth-last-child(4),
+.pass:first-child:nth-last-child(4) ~ .pass {
+    width: 20%;
 }
