@@ -1,0 +1,25 @@
+.course__side-bar{
+    width: 20%;
+    height: 100%;
+    display: flex;
+}
+
+.course__side-bar__container{
+    margin: 15% 0 0 10%;
+}
+
+.course__side-bar::after{
+    content:"";
+    height: 85vh;
+    width: 1px;
+    background-color: white;
+    display: block;
+    position: relative;
+    right: -20px;
+    top: 8vh;
+}
+
+.course__side-bar h1{
+    color: var(--primary-color);
+    
+}

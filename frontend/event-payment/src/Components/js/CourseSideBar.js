@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-
+import '../styles/CourseSideBar.css'
 
 export default (props) => {
 
@@ -12,7 +12,7 @@ export default (props) => {
   return (
     <div className="course__side-bar">
         <div className="course__side-bar__container">
-            <h1> Registration for course:</h1>
+            <h1> Registration for class:</h1>
             <div className="course__side-bar__info"> 
                 <h2>{info.name}</h2>
                 <h3>Week: {info.week_start} - {info.week_end}</h3>

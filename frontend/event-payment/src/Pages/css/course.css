@@ -5,16 +5,6 @@
     flex-direction: row;
 }
 
-.course__side-bar{
-    width: 20%;
-    height: 100%;
-    display: flex;
-}
-
-.course__side-bar h1{
-    color: var(--primary-color)
-}
-
 .payment-process{
     height: 100%;
     width: 80%;
