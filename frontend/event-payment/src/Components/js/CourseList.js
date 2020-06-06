@@ -14,7 +14,7 @@ export default () => {
       }, []);
 
   return (
-    <div className="pass-type">
+    <div className="classes">
         {courses.map((course,index)=>{
           const text = `Time: ${course.day}s, ${course.time_start}-${course.time_end} <br> Weeks: ${course.week_start}-${course.week_end}, ${course.year}<br> Description: ${course.description} `
           return <Parallax title={course.name} imageSide={index % 2 === 0 ? "left" : "right"} imageURL="Talal.jpg" text={text} link={`/courses/${course.id}`} linkText="Buy pass"/>
