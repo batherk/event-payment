@@ -12,7 +12,7 @@ export default (props) => {
   }, [props.passes]);
 
   return (
-    <div className="pass-type-list">
+    <div className="pass-list">
       {passes? passes.map((pass,index)=>{
       return <Pass id={pass.id} role={pass.role} price={pass.price} url={'Talal.jpg'}/>
     }):null}

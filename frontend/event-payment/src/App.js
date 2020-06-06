@@ -16,8 +16,6 @@ export default ()=>{
           <Route path='/courses/:id' exact component={Course}/>
           <Route path='/events' exact component={EventList}/>
           <Route path='/events/:id' exact component={Event}/>
-          <Route path='/coursepass/:id' exact component={CoursePass}/>
-          <Route path='/eventpass/:id' exact component={Event}/>
         </Switch>
       </div>
     </Router>

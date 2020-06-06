@@ -1,8 +1,7 @@
-.pass-type-list{
-    padding: 10vh 0;
+.pass-list{
+    padding: 5% 5%;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
-    max-height: 60vh;
 }
