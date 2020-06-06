@@ -9,5 +9,6 @@ import PassList from './PassList'
 import CourseList from './CourseList'
 import CourseSideBar from './CourseSideBar'
 import StepProgress from './StepProgress'
+import PersonalInfo from './Personalnfo'
 
-export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList, CourseSideBar, StepProgress}
+export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList, CourseSideBar, StepProgress, PersonalInfo}

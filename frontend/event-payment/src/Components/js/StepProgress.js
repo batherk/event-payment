@@ -1,22 +1,25 @@
-import React from 'react';
+import React , { useContext } from 'react';
 import './../styles/StepProgress.css'
+import { CurrentStepContext } from '../../contexts'
 
 
 export default (props) => {
 
+    const {currentStep, setCurrentStep} = useContext(CurrentStepContext)
+
     const stepIdentifier = (index)=> {
-        if(props.current===index+1){
+        if(currentStep===index+1){
             return "step step-current"
-        }else if(props.current>index+1){
+        }else if(currentStep>index+1){
             return "step step-done"
         }else{
             return "step step-remaining"
         }
     }
 
-    const setCurrentStep = (index) =>{
-        if (index+1<props.current){
-            props.setCurrentStep(index+1)
+    const wantToSetCurrentStep = (index) =>{
+        if (index+1<currentStep){
+            setCurrentStep(index+1)
         }
     }
 
@@ -24,7 +27,7 @@ export default (props) => {
     <div className="step-progress">
         {props.steps.map((step,index)=>{
             return (
-                <div className={stepIdentifier(index)} onClick={(e)=>{setCurrentStep(index)}}>
+                <div className={stepIdentifier(index)} onClick={(e)=>{wantToSetCurrentStep(index)}}>
                     <div className="step-number">
                     <h3>{index+1}</h3>
                     </div>

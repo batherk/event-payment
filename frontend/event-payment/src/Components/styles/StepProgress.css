@@ -1,7 +1,7 @@
 .step-progress{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .step{
@@ -11,11 +11,11 @@
 }
 
 .step:first-of-type{
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 .step:last-of-type{
-    margin-right: 5%;
+    margin-right: 20%;
 }
 
 .step-number{

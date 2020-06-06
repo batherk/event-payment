@@ -25,3 +25,11 @@
     font-size: 40px;
 }
 
+.pass:first-of-type{
+    margin-left:20vh;
+}
+
+.pass:last-of-type{
+    margin-right: 20vh;
+}
+

@@ -7,23 +7,23 @@
 /* one item */
 .pass:first-child:nth-last-child(1) {
 /* -or- li:only-child { */
-    width: 80%;
+    width: 60%;
 }
 
 /* two items */
 .pass:first-child:nth-last-child(2),
 .pass:first-child:nth-last-child(2) ~ .pass {
-    width: 40%;
+    width: 30%;
 }
 
 /* three items */
 .pass:first-child:nth-last-child(3),
 .pass:first-child:nth-last-child(3) ~ .pass {
-    width: 30%;
+    width: 20%;
 }
 
 /* four items */
 .pass:first-child:nth-last-child(4),
 .pass:first-child:nth-last-child(4) ~ .pass {
-    width: 20%;
+    width: 15%;
 }
