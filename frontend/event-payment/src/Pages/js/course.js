@@ -21,11 +21,13 @@ export default ({match})=>{
             'phone':[phone, setPhone]
       }
 
-      const steps = ['Choose pass', 'Submit personal info','Pay']
-
-      const choosePass = (id) => {
-            setPass(id)
-            setCurrentStep(2)
+      const getSteps = () => {
+            if (currentStep===1){
+                  return ['Choose pass', 'Submit personal info','Pay']
+            }else if(currentStep===2){
+                  return [`Chosen pass: ${pass.role}`, 'Submit personal info','Pay']
+            }
+            
       }
 
 
@@ -44,9 +46,9 @@ export default ({match})=>{
                   <CourseSideBar info={course}/>
                   <div className="payment-process">
                         
-                              <StepProgress steps={steps}/>
+                              <StepProgress steps={getSteps()}/>
                         
-                        {currentStep===1?<PassList passes={course.passes} choosePass={choosePass}/>:null}
+                        {currentStep===1?<PassList passes={course.passes}/>:null}
                         {currentStep===2?<PersonalInfo/>:null}
                   </div>
             </CourseContext.Provider>

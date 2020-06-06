@@ -7,8 +7,8 @@
 
 .payment-process{
     height: 90vh;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .payment-process .pass-list{
-    margin-top: 10vh;
+    margin-top: 5vh;
     height:50vh;
 }
 
