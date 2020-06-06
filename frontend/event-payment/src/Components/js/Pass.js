@@ -1,6 +1,7 @@
 import React from 'react';
 import './../styles/Pass.css'
 import { Image } from '.'
+import { Link } from 'react-router-dom'
 
 
 export default (props) => {
@@ -19,12 +20,13 @@ export default (props) => {
 
   return (
     <div className="pass-type">
+      <Link to={`/coursepass/${props.id}`}>
         <Image className="pass-type__img" url={imageUrl()}/>
         <div className="pass-type__text">
             <h2 className="pass-type__role">{props.role}</h2>
             <h2 className="pass-type__price">{props.price} EUR</h2>
         </div>
-        
+      </Link>
     </div>
   );
 }

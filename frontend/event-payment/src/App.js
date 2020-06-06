@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Home, CourseList, Course, EventList, Event } from './Pages/js'
+import { Home, CourseList, Course, EventList, Event, CoursePass } from './Pages/js'
 import { Hamburger } from './Components/js'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -16,6 +16,8 @@ export default ()=>{
           <Route path='/courses/:id' exact component={Course}/>
           <Route path='/events' exact component={EventList}/>
           <Route path='/events/:id' exact component={Event}/>
+          <Route path='/coursepass/:id' exact component={CoursePass}/>
+          <Route path='/eventpass/:id' exact component={Event}/>
         </Switch>
       </div>
     </Router>
