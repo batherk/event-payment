@@ -6,6 +6,9 @@ from pass_type.serializers import CoursePassSerializer
 
 class CourseSerializer(serializers.ModelSerializer):
 
+    time_start = serializers.TimeField(format='%H:%M')
+    time_end = serializers.TimeField(format='%H:%M')
+
     class Meta:
         model = Course
         fields = ('__all__')
