@@ -19,7 +19,7 @@ export default (props) => {
   }
 
   return (
-    <div className="pass">
+    <div className="pass" onClick={(e)=>{props.choosePass(props.id)}}>
       <Image className="pass__img" url={imageUrl()}/>
         <div className="pass__text">
           <h2 className="pass__role">{props.role}</h2>

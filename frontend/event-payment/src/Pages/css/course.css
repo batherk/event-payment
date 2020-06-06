@@ -6,14 +6,19 @@
 }
 
 .payment-process{
-    height: 100%;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+}
+
+.payment-process .step-progress{
+    margin-bottom: 5vh;
 }
 
 .payment-process .pass-list{
-    height: 60%;
+    height:70vh;
 }
 

@@ -14,11 +14,17 @@ export default (props) => {
         }
     }
 
+    const setCurrentStep = (index) =>{
+        if (index+1<props.current){
+            props.setCurrentStep(index+1)
+        }
+    }
+
   return (
     <div className="step-progress">
         {props.steps.map((step,index)=>{
             return (
-                <div className={stepIdentifier(index)}>
+                <div className={stepIdentifier(index)} onClick={(e)=>{setCurrentStep(index)}}>
                     <div className="step-number">
                     <h3>{index+1}</h3>
                     </div>

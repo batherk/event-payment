@@ -14,7 +14,7 @@ export default (props) => {
   return (
     <div className="pass-list">
       {passes? passes.map((pass,index)=>{
-      return <Pass id={pass.id} role={pass.role} price={pass.price} url={'Talal.jpg'}/>
+      return <Pass id={pass.id} role={pass.role} price={pass.price} url={'Talal.jpg'} choosePass={props.choosePass}/>
     }):null}
     </div>
   );

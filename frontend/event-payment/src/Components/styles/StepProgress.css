@@ -34,6 +34,14 @@
     border: 1px solid var(--primary-color);
 }
 
+.step-done:hover .step-number{
+    border: 1px solid var(--primary-color);
+}
+
+.step-done:hover{
+    cursor: pointer;
+}
+
 .step-number h3{
     margin: 0;
     height: 100%;
