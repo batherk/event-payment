@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './../../App.css';
-import { Parallax, PassTypeList } from './../../Components/js'
+import { Parallax, PassList } from './../../Components/js'
 
 export default ({match})=>{
 
@@ -18,7 +18,7 @@ export default ({match})=>{
 
   return (
       <div className="course-page">
-            <PassTypeList/>
+            <PassList/>
             <Parallax title={course.name} imageSide="left" imageURL="Talal.jpg" text={text}/> 
       </div>
       

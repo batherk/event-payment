@@ -1,6 +1,6 @@
 import React from 'react';
 import './../styles/PassTypeList.css'
-import { PassType } from '.'
+import { Pass } from '.'
 
 
 export default (props) => {
@@ -9,7 +9,7 @@ export default (props) => {
   return (
     <div className="pass-type-list">
       {types.map((passType,index)=>{
-      return <PassType url={passType.url} role={passType.role} price={passType.price}/>
+      return <Pass url={passType.url} role={passType.role} price={passType.price}/>
     })}
     </div>
   );

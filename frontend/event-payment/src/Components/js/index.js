@@ -4,8 +4,8 @@ import TextBox from './Textbox'
 import App from '../../App'
 import Hamburger from './Hamburger'
 import HamburgerMenu from './HamburgerMenu'
-import PassType from './PassType'
-import PassTypeList from './PassTypeList'
+import Pass from './Pass'
+import PassList from './PassList'
 import CourseList from './CourseList'
 
-export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, PassType, PassTypeList, CourseList}
+export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList}
