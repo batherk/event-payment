@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './../styles/PassList.css'
 import { Pass } from '.'
+import { CourseContext } from '../../contexts'
 
 
 export default (props) => {
 
-  const [passes, setPasses] = useState([]);
-
-  useEffect(()=>{
-    setPasses(props.passes)
-  }, [props.passes]);
+  const [course, setCourse] = useContext(CourseContext).course
 
   return (
     <div className="pass-list">
-      {passes? passes.map((pass,index)=>{
-      return <Pass id={pass.id} role={pass.role} price={pass.price} url={'Talal.jpg'} choosePass={props.choosePass}/>
+      {course.passes? course.passes.map((pass,index)=>{
+      return <Pass pass={pass}/>
     }):null}
     </div>
   );
