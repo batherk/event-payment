@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from 'react';
 import { Parallax } from '.'
-import './../styles/PassType.css'
 
 
 export default () => {
