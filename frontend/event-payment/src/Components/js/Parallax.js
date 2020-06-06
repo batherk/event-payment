@@ -7,7 +7,7 @@ import TextBox from './Textbox.js'
 
 export default (props) => {
     const imageSide = props.imageSide || "left";
-    const textbox = <TextBox title={props.title} text={props.text}/>;
+    const textbox = <TextBox title={props.title} text={props.text} link={props.link} linkText={props.linkText}/>;
     return (
     <div className="parallax" image-side={imageSide}>
         <Image url={props.imageURL}/>

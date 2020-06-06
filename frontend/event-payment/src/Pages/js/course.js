@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './../../App.css';
-import { Parallax } from './../../Components/js'
+import { Parallax, PassTypeList } from './../../Components/js'
 
-export default ()=>{
+export default ({match})=>{
 
-        const title = 'Bjørn Are Therkelsen'
-        const imageURL= 'Profil.jpg'
-        const text= "Jeg er student ved NTNU og går tredjeåret på linjen for Datateknologi med spesialisering innen kunstig intelligens. På fritiden er jeg salsadanser og -instruktør.<br><br> Her er min <a href='/docs/Bjørn_Are_Therkelsen_CV.pdf' target='_blank' >CV</a>."
-        const imageSide = "left"
+      const [course, setCourse] = useState({});
+      const text = `Time: ${course.day}s, ${course.time_start}-${course.time_end} <br> Weeks: ${course.week_start}-${course.week_end}, ${course.year}<br> Description: ${course.description} `
+
+      useEffect(() => {
+            const url = `http://localhost:8000/courses/${match.params.id}`
+            fetch(url)
+            .then((res)=>res.json())
+            .then((json)=>{
+                  setCourse(json);
+            });
+      },[]);
 
   return (
-        <Parallax imageSide={imageSide} title={title} text={text} imageURL={imageURL}/>
-  );
+      <div className="course-page">
+            <PassTypeList/>
+            <Parallax title={course.name} imageSide="left" imageURL="Talal.jpg" text={text}/> 
+      </div>
+      
+      );
 }
