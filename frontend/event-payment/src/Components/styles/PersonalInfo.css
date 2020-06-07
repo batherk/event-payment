@@ -6,7 +6,7 @@
     height: 60vh;
 }
 
-.personal-info input{
+.personal-info input, .personal-info button{
     height: 7vh;
     width: 30vw;
     background-color: transparent;
