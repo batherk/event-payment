@@ -4,6 +4,9 @@
   --primary-color-darkest: #6E6F00;
   --primary-color-lighter:#F5F700;
 
+  --color-correct: rgb(33, 216, 33);
+  --color-wrong: rgb(226, 32, 26);
+
   --transition: all ease-in-out 0.6s;
   --transition-fast: all ease-in-out 0.3s;
   --scroll-background:#1f1f1f;

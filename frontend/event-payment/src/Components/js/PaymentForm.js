@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import {Elements, CardElement} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+import React, { useContext, useState } from 'react';
+import {Elements, CardElement, useStripe } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import '../styles/PaymentForm.css'
 import '../../App.css'
 import { CourseContext } from '../../contexts'
@@ -24,11 +24,11 @@ const options = {style: {
   },
 },}
 
+const Form = () => {
 
-
-export default () => {
-
-  const [currentStep, setCurrentStep] = useContext(CourseContext).step
+  const [currentStep, setCurrentStep] = useContext(CourseContext).step;
+  const [validInput, setValidInput] = useState(false)
+  const stripe = useStripe();
 
   const getIdentifiers = () => {
     if (currentStep===3){
@@ -41,13 +41,21 @@ export default () => {
   }
 
   return (
-    <Elements stripe={stripePromise}>
-      <div className={getIdentifiers()}>
-        <div className="stripe-container">
-          <CardElement options={options}/>
-        </div>
-        <button className="payment-button">Pay</button>
+    <div className={getIdentifiers()}>
+      <div className={validInput?"stripe-container valid":"stripe-container"}>
+        <CardElement options={options} onChange={(e)=>{setValidInput(e.complete)}}/>
       </div>
+      <button className="payment-button" disabled={!stripe || !validInput}>Pay</button>
+    </div>
+  );
+};
+
+
+export default () => {
+
+  return (
+    <Elements stripe={stripePromise}>
+      <Form/>
     </Elements>
   );
 };
