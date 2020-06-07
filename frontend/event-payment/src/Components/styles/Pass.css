@@ -9,7 +9,7 @@
     bottom: 40%;
     left:0;
 }
-.pass__role{
+.pass__role, .pass__name{
     position: relative;
     bottom:30%;
     left:2%;

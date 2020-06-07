@@ -1,15 +1,93 @@
-import React from 'react';
-import './../../App.css';
-import { Parallax } from '../../Components/js'
+import React, { useEffect, useState } from 'react';
+import '../css/course.css';
+import { EventSideBar, PassList, StepProgress, PersonalForm, PaymentForm, PaymentCompletion } from './../../Components/js'
+import {EventContext} from '../../contexts'
 
-export default ()=>{
+export default ({match})=>{
 
-        const title = 'Bjørn Are Therkelsen'
-        const imageURL= 'Profil.jpg'
-        const text= "Jeg er student ved NTNU og går tredjeåret på linjen for Datateknologi med spesialisering innen kunstig intelligens. På fritiden er jeg salsadanser og -instruktør.<br><br> Her er min <a href='/docs/Bjørn_Are_Therkelsen_CV.pdf' target='_blank' >CV</a>."
-        const imageSide = "left"
+      const [event, setEvent] = useState(null);
+      const [pass, setPass] = useState(null);
+      const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+      const [phone, setPhone] = useState("");
+      const [currentStep,setCurrentStep] = useState(1)
+      const [token,setToken] = useState(null)
+      const [userFeedBack,setUserFeedBack] = useState("")
+
+      const context = {currentStep, setCurrentStep, event, setEvent,
+            pass, setPass, name, setName, email, setEmail, phone, setPhone, token,setToken, 
+            userFeedBack, setUserFeedBack
+      }
+
+      
+
+      const getSteps = () => {
+            if (currentStep===1){
+                  return ['Choose pass', 'Submit personal info','Pay']
+            }else if(currentStep===2){
+                  return ['Chosen pass', 'Submit personal info','Pay']
+            }else if(currentStep===3){
+                  return ['Chosen pass', 'Submitted personal info','Pay']
+            }else{
+                  return ['Choose pass', 'Submit personal info','Pay']
+            }
+            
+      }
+
+      useEffect(()=>{
+            if (userFeedBack==="Payment Complete"){
+                  console.log("Woho")
+            }
+      }, [userFeedBack])
+
+      useEffect(()=>{
+            if(token!==null){
+                  setUserFeedBack("Contacting the server with morse code")
+                  const url = `http://localhost:8000/coursepayments/`
+
+                  fetch(url, {
+                        method: 'POST',
+                        headers: {
+                              'Accept': 'application/json',
+                              'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                              pass_type: pass.id,
+                              buyer_name: name,
+                              buyer_email: email,
+                              buyer_phone: phone,
+                        })
+                  })
+                  .then((response)=>{return response.json()})
+                  .then((json)=>{setUserFeedBack(json.detail);setCurrentStep(5)})
+            }
+      },[token])
+
+
+      useEffect(() => {
+            const url = `http://localhost:8000/events/${match.params.id}`
+            fetch(url)
+            .then((res)=>res.json())
+            .then((json)=>{
+                  setEvent(json);
+            });
+      },[]);
 
   return (
-        <Parallax imageSide={imageSide} title={title} text={text} imageURL={imageURL}/>
-  );
+      <div className="course-page">
+            <EventContext.Provider value={context}>
+                  <EventSideBar/>
+                  <div className="payment-process">
+                        <StepProgress steps={getSteps()}/>
+                        <div className="steps-container">
+                              <PassList/>
+                              <PersonalForm/>
+                              <PaymentForm/>
+                              <PaymentCompletion/>
+                        </div>
+                  </div>
+            </EventContext.Provider>
+      </div>
+      
+      );
 }

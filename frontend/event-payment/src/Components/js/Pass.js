@@ -24,6 +24,7 @@ export default (props) => {
     <div className="pass" onClick={(e)=>{setPass(props.pass);setCurrentStep(2)}}>
       <Image className="pass__img" url={imageUrl()}/>
         <div className="pass__text">
+          {props.pass.name?<h2 className="pass__name">{props.pass.name}</h2>:null}
           <h2 className="pass__role">{props.pass.role}</h2>
           <h2 className="pass__price">{props.pass.price} EUR</h2>
       </div>

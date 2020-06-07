@@ -8,7 +8,6 @@ class CourseViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    serializer_class = CourseWithPassesSerializer
     queryset = Course.objects.all()
 
     def get_serializer_class(self):

@@ -1,6 +1,6 @@
 from rest_framework import mixins, viewsets
 
-from event.serializers import EventSerializer
+from event.serializers import EventSerializer, EventWithPassesSerializer
 from event.models import Event
 
 class EventViewSet(
@@ -8,5 +8,10 @@ class EventViewSet(
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
 ):
-    serializer_class = EventSerializer
     queryset = Event.objects.all()
+
+
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return EventWithPassesSerializer
+        return EventSerializer
