@@ -1,6 +1,6 @@
 import React, { useEffect, useState, createContext } from 'react';
 import '../css/course.css';
-import { CourseSideBar, PassList, StepProgress, PersonalInfo, PaymentForm } from './../../Components/js'
+import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm } from './../../Components/js'
 import {CourseContext} from '../../contexts'
 
 export default ({match})=>{
@@ -49,11 +49,10 @@ export default ({match})=>{
             <CourseContext.Provider value={states}>
                   <CourseSideBar info={course}/>
                   <div className="payment-process">
-                        
-                              <StepProgress steps={getSteps()}/>
+                        <StepProgress steps={getSteps()}/>
                         
                         {currentStep===1?<PassList passes={course.passes}/>:null}
-                        {currentStep===2?<PersonalInfo/>:null}
+                        {currentStep===2?<PersonalForm/>:null}
                         {currentStep===3?<PaymentForm/>:null}
                   </div>
             </CourseContext.Provider>

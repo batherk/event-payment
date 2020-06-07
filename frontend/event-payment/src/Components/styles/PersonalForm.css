@@ -1,4 +1,4 @@
-.personal-info{
+.personal-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,7 @@
     height: 60vh;
 }
 
-.personal-info input, .personal-info button{
+.personal-form input, .personal-form button{
     height: 7vh;
     width: 30vw;
     background-color: transparent;
@@ -16,7 +16,7 @@
     text-align: center;
 }
 
-.personal-info input:hover, .personal-info button:hover{
+.personal-form input:hover, .personal-form button:hover{
     border: 1px solid var(--primary-color-darker);
 }
 
