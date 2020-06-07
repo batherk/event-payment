@@ -11,10 +11,10 @@ export default (props)=>{
 
   return (
       <div className="personal-info">
-        <input type="text" placeholder="Name" value={name} onChange={e=>{setName(e.target.value)}}/>
-        <input type="email" placeholder="Email" value={email} onChange={e=>{setEmail(e.target.value)}}/>
-        <input type="tel" placeholder="Phone Number" value={phone} onChange={e=>{setPhone(e.target.value)}}/>
-        <button type="submit" value="Next" onClick={(e)=>{setCurrentStep(3)}}>Next</button>
+        <input type="text" placeholder="Name" value={name} autocomplete="name" onChange={e=>{setName(e.target.value)}}/>
+        <input type="email" placeholder="Email" value={email} autocomplete="email" onChange={e=>{setEmail(e.target.value)}}/>
+        <input type="tel" placeholder="Phone Number" value={phone} autocomplete="tel" onChange={e=>{setPhone(e.target.value)}}/>
+        <button value="Next" onClick={(e)=>{setCurrentStep(3)}}>Next</button>
       </div>
 
   );
