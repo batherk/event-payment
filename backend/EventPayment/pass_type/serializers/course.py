@@ -7,4 +7,4 @@ class CoursePassSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CoursePass
-        fields = ('__all__')
+        fields = ('id', 'price', 'role')

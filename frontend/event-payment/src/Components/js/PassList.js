@@ -18,7 +18,7 @@ export default (props) => {
 
   return (
     <div className={getIdentifiers()}>
-      {course.passes? course.passes.map((pass,index)=>{
+      {course.passes_left? course.passes_left.map((pass,index)=>{
       return <Pass pass={pass}/>
     }):null}
     </div>

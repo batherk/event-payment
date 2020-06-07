@@ -9,3 +9,7 @@ class AbstractEvent(models.Model):
 
     class Meta:
         abstract = True
+
+
+    def passes_left(self):
+        return self.passes.passes_left()

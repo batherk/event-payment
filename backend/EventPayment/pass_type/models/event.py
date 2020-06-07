@@ -7,7 +7,7 @@ class EventPass(AbstractPass):
 
     name = models.CharField(max_length=80)
     description = models.CharField(max_length=300, null=True)
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="passes")
 
     class Meta:
         verbose_name = "Event pass"

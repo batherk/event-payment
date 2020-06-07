@@ -80,7 +80,7 @@ export default ({match})=>{
                   <div className="payment-process">
                         <StepProgress steps={getSteps()}/>
                         <div className="steps-container">
-                              <PassList passes={course.passes}/>
+                              <PassList/>
                               <PersonalForm/>
                               <PaymentForm/>
                               <PaymentCompletion/>
