@@ -1,6 +1,7 @@
 import React from 'react';
 import {Elements, CardElement} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
+import '../styles/PaymentForm.css'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -24,8 +25,11 @@ const options = {style: {
 export default () => {
   return (
     <Elements stripe={stripePromise}>
-      <div className="card-container">
-        <CardElement options={options}/>
+      <div className="form-container">
+        <div className="stripe-container">
+          <CardElement options={options}/>
+        </div>
+        <button className="payment-button">Pay</button>
       </div>
     </Elements>
   );
