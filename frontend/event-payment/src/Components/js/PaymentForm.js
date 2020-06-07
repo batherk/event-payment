@@ -32,11 +32,11 @@ export default () => {
 
   const getIdentifiers = () => {
     if (currentStep===3){
-      return "payment-form current-step"
+      return "payment-form process-step current-process-step"
     }else if (currentStep>3){
-      return "payment-form completed-step"
+      return "payment-form process-step completed-process-step"
     }else{
-      return "payment-form future-step"
+      return "payment-form process-step future-process-step"
     }
   }
 

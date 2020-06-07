@@ -11,9 +11,9 @@ export default (props) => {
 
   const getIdentifiers = () => {
     if (currentStep===1){
-      return "pass-list current-step"
+      return "pass-list process-step current-process-step"
     }else{
-      return "pass-list completed-step"
+      return "pass-list process-step completed-process-step"
     }
   }
 

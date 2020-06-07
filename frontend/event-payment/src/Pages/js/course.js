@@ -50,10 +50,11 @@ export default ({match})=>{
                   <CourseSideBar info={course}/>
                   <div className="payment-process">
                         <StepProgress steps={getSteps()}/>
-                        
-                        {currentStep===1?<PassList passes={course.passes}/>:null}
-                        {currentStep===2?<PersonalForm/>:null}
-                        {currentStep===3?<PaymentForm/>:null}
+                        <div className="steps-container">
+                              <PassList passes={course.passes}/>
+                              <PersonalForm/>
+                              <PaymentForm/>
+                        </div>
                   </div>
             </CourseContext.Provider>
       </div>

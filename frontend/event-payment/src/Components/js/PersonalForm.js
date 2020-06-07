@@ -12,11 +12,11 @@ export default (props)=>{
 
     const getIdentifiers = () => {
       if (currentStep===2){
-        return "personal-form current-step"
+        return "personal-form process-step current-process-step"
       }else if (currentStep>2){
-        return "personal-form completed-step"
+        return "personal-form process-step completed-process-step"
       }else{
-        return "personal-form future-step"
+        return "personal-form process-step future-process-step"
       }
     }
 

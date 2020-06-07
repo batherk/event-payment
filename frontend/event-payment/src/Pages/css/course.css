@@ -6,20 +6,55 @@
 }
 
 .payment-process{
+    position: fixed;
+    top:10vh;
+    left: 20vw;
     height: 90vh;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    width: 80%;
+    width: 80vw;
     display: flex;
     flex-direction: column;
 }
 
-.payment-process .step-progress{
-    margin-bottom: 5vh;
+.steps-container{
+    display:block;
+    position:absolute;
+    top:10vh;
+    width: 100%;
 }
 
-.payment-process .pass-list, .payment-process .payment-form, .payment-process .personal-form{
-    margin-top: 5vh;
+.payment-process .process-step{
     height:50vh;
+    width: 100%;
+    position: absolute;
+    top: 10vh;
 }
+
+.payment-process .current-process-step{
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+    opacity: 1;
+    transition: all ease-in-out 0.5s;
+}
+
+.payment-process .future-process-step, 
+.payment-process .completed-process-step{
+    z-index:1;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+.payment-process .completed-process-step{
+    left: -50%;
+    transform: translateX(0);
+    transition: all ease-in-out 0.5s;
+}
+
+.payment-process .future-process-step{
+    left: 100%;
+    transform: translateX(50%);
+    transition: all ease-in-out 0.5s;
+}
+
+
 
