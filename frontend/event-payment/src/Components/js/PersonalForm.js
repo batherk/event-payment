@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import '../styles/PersonalForm.css';
+import '../../App.css'
 import { CourseContext } from '../../contexts'
 
 export default (props)=>{

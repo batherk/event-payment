@@ -23,4 +23,24 @@ div.App{
   overflow: hidden;
 }
 
+button, input{
+  height: 7vh;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 20px;
+  text-align: center;
+}
+
+input{
+  width: 30vw;
+}
+button{
+  width: 10vw;
+}
+
+.input:hover, button:hover{
+  border: 1px solid var(--primary-color-darker);
+}
+
 

@@ -3,21 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 60vh;
-}
-
-.personal-form input, .personal-form button{
-    height: 7vh;
-    width: 30vw;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    font-size: 20px;
-    text-align: center;
-}
-
-.personal-form input:hover, .personal-form button:hover{
-    border: 1px solid var(--primary-color-darker);
 }
 
 input:-webkit-autofill, 

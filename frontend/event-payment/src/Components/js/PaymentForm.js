@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import {Elements, CardElement} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import '../styles/PaymentForm.css'
+import '../../App.css'
 import { CourseContext } from '../../contexts'
 
 
