@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 import './../styles/Pass.css'
 import { Image } from '.'
-import { Link } from 'react-router-dom'
 import { CourseContext } from '../../contexts'
 
 
 export default (props) => {
 
-  const [pass,setPass] = useContext(CourseContext).pass
-  const [currentStep, setCurrentStep] = useContext(CourseContext).step
+  const { setPass} = useContext(CourseContext).pass
+  const { setCurrentStep } = useContext(CourseContext).step
 
   const imageUrl=()=>{
     if(props.pass.role==='leader'){

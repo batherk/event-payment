@@ -26,8 +26,8 @@ const options = {style: {
 
 const Form = () => {
 
-  const [currentStep, setCurrentStep] = useContext(CourseContext).step;
-  const [token, setToken] = useContext(CourseContext).token;
+  const { currentStep, setCurrentStep } = useContext(CourseContext).step;
+  const { setToken }= useContext(CourseContext).token;
   const [validInput, setValidInput] = useState(false);
   const stripe = useStripe();
   const elements = useElements();

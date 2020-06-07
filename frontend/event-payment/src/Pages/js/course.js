@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/course.css';
 import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm } from './../../Components/js'
 import {CourseContext} from '../../contexts'
@@ -14,13 +14,13 @@ export default ({match})=>{
       const [token,setToken] = useState(null)
 
       const states = {
-            'step':[currentStep, setCurrentStep], 
-            'course':[course, setCourse],
-            'pass':[pass, setPass],
-            'name':[name, setName],
-            'email':[email, setEmail],
-            'phone':[phone, setPhone],
-            'token':[token,setToken]
+            'step':{currentStep, setCurrentStep}, 
+            'course':{course, setCourse},
+            'pass':{pass, setPass},
+            'name':{name, setName},
+            'email':{email, setEmail},
+            'phone':{phone, setPhone},
+            'token':{token,setToken}
       }
 
       const getSteps = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Home, CourseList, Course, EventList, Event, CoursePass } from './Pages/js'
+import { Home, CourseList, Course, EventList, Event } from './Pages/js'
 import { Hamburger } from './Components/js'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 

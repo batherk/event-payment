@@ -6,8 +6,8 @@ import { CourseContext } from '../../contexts'
 
 export default (props) => {
 
-  const [course, setCourse] = useContext(CourseContext).course
-  const [currentStep, setCurrentStep] = useContext(CourseContext).step
+  const { course } = useContext(CourseContext).course
+  const { currentStep } = useContext(CourseContext).step
 
   const getIdentifiers = () => {
     if (currentStep===1){
