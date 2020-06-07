@@ -11,6 +11,7 @@ export default ({match})=>{
       const [email, setEmail] = useState("");
       const [phone, setPhone] = useState("");
       const [currentStep,setCurrentStep] = useState(1)
+      const [token,setToken] = useState(null)
 
       const states = {
             'step':[currentStep, setCurrentStep], 
@@ -18,7 +19,8 @@ export default ({match})=>{
             'pass':[pass, setPass],
             'name':[name, setName],
             'email':[email, setEmail],
-            'phone':[phone, setPhone]
+            'phone':[phone, setPhone],
+            'token':[token,setToken]
       }
 
       const getSteps = () => {
@@ -33,6 +35,12 @@ export default ({match})=>{
             }
             
       }
+
+      useEffect(()=>{
+            if(token!==null){
+                  console.log(`Gonna send ${token}to backend`)
+            }
+      },[token])
 
 
       useEffect(() => {

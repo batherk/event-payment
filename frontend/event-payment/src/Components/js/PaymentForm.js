@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import {Elements, CardElement, useStripe } from '@stripe/react-stripe-js';
+import {Elements, CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import '../styles/PaymentForm.css'
 import '../../App.css'
@@ -27,8 +27,10 @@ const options = {style: {
 const Form = () => {
 
   const [currentStep, setCurrentStep] = useContext(CourseContext).step;
-  const [validInput, setValidInput] = useState(false)
+  const [token, setToken] = useContext(CourseContext).token;
+  const [validInput, setValidInput] = useState(false);
   const stripe = useStripe();
+  const elements = useElements();
 
   const getIdentifiers = () => {
     if (currentStep===3){
@@ -40,12 +42,23 @@ const Form = () => {
     }
   }
 
+  const getToken = async (event) => {
+    setCurrentStep(4)
+
+    const { token, error } = await stripe.createToken(elements.getElement(CardElement))
+    if (error){
+      console.log(error)
+    }else{
+      setToken(token.id)
+    }
+  }
+
   return (
     <div className={getIdentifiers()}>
       <div className={validInput?"stripe-container valid":"stripe-container"}>
         <CardElement options={options} onChange={(e)=>{setValidInput(e.complete)}}/>
       </div>
-      <button className="payment-button" disabled={!stripe || !validInput}>Pay</button>
+      <button className="payment-button" disabled={!stripe || !validInput} onClick={getToken}>Pay</button>
     </div>
   );
 };
