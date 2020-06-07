@@ -27,3 +27,8 @@
 .pass:first-child:nth-last-child(4) ~ .pass {
     width: 15%;
 }
+
+.pass-list > .parallax{
+    width: 90%;
+    height: 100%;
+}

@@ -5,7 +5,7 @@ import {CourseContext} from '../../contexts'
 
 export default ({match})=>{
 
-      const [course, setCourse] = useState({});
+      const [course, setCourse] = useState(null);
       const [pass, setPass] = useState(null);
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
