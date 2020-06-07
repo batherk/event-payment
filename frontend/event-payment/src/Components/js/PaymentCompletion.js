@@ -1,11 +1,11 @@
 import React , { useContext } from 'react';
-import { CourseContext } from '../../contexts'
+import { EventContext } from '../../contexts'
 import '../styles/PaymentCompletion.css'
 import { Parallax } from '.'
 
 export default () => {
 
-    const { currentStep } = useContext(CourseContext);
+    const { currentStep } = useContext(EventContext);
     const text = "I hope you will enjoy the classes :) <br/>After a couple of updates you will get a confirmation mail." 
 
     const getIdentifiers = () => {

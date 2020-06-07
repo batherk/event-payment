@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import './../styles/Pass.css'
 import { Image } from '.'
-import { CourseContext } from '../../contexts'
+import { EventContext } from '../../contexts'
 
 
 export default (props) => {
 
-  const { setPass, setCurrentStep} = useContext(CourseContext)
+  const { setPass, setCurrentStep} = useContext(EventContext)
 
   const imageUrl=()=>{
     if(props.pass.role==='leader'){

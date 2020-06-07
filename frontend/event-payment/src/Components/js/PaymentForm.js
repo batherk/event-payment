@@ -3,7 +3,7 @@ import {Elements, CardElement, useStripe, useElements} from '@stripe/react-strip
 import { loadStripe } from '@stripe/stripe-js';
 import '../styles/PaymentForm.css'
 import '../../App.css'
-import { CourseContext } from '../../contexts'
+import { EventContext } from '../../contexts'
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -26,7 +26,7 @@ const options = {style: {
 
 const Form = () => {
 
-  const { currentStep, setCurrentStep, setToken, setUserFeedBack } = useContext(CourseContext);
+  const { currentStep, setCurrentStep, setToken, setUserFeedBack } = useContext(EventContext);
   
   const [validInput, setValidInput] = useState(false);
   const stripe = useStripe();

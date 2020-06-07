@@ -1,11 +1,11 @@
 import React , { useContext } from 'react';
 import './../styles/StepProgress.css'
-import { CourseContext } from '../../contexts'
+import { EventContext } from '../../contexts'
 
 
 export default (props) => {
 
-    const {currentStep, setCurrentStep, userFeedBack } = useContext(CourseContext);
+    const {currentStep, setCurrentStep, userFeedBack } = useContext(EventContext);
 
     const stepIdentifier = (index)=> {
         if(currentStep===index+1){

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import '../styles/PersonalForm.css';
 import '../../App.css'
-import { CourseContext } from '../../contexts'
+import { EventContext } from '../../contexts'
 
 export default (props)=>{
 
-    const { name, setName, email, setEmail, phone, setPhone, currentStep, setCurrentStep } = useContext(CourseContext)
+    const { name, setName, email, setEmail, phone, setPhone, currentStep, setCurrentStep } = useContext(EventContext)
 
     const getIdentifiers = () => {
       if (currentStep===2){

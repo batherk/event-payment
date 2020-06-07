@@ -1,3 +1,3 @@
 import { createContext } from 'react'
 
-export const CourseContext = createContext(null)
+export const EventContext = createContext(null)

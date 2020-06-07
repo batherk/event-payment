@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import '../css/course.css';
 import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm, PaymentCompletion } from './../../Components/js'
-import {CourseContext} from '../../contexts'
+import {EventContext} from '../../contexts'
 
 export default ({match})=>{
 
-      const [course, setCourse] = useState(null);
+      const [event, setEvent] = useState(null);
       const [pass, setPass] = useState(null);
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ export default ({match})=>{
       const [token,setToken] = useState(null)
       const [userFeedBack,setUserFeedBack] = useState("")
 
-      const context = {currentStep, setCurrentStep, course, setCourse,
+      const context = {currentStep, setCurrentStep, event, setEvent,
             pass, setPass, name, setName, email, setEmail, phone, setPhone, token,setToken, 
             userFeedBack, setUserFeedBack
       }
@@ -69,14 +69,14 @@ export default ({match})=>{
             fetch(url)
             .then((res)=>res.json())
             .then((json)=>{
-                  setCourse(json);
+                  setEvent(json);
             });
       },[]);
 
   return (
       <div className="course-page">
-            <CourseContext.Provider value={context}>
-                  <CourseSideBar info={course}/>
+            <EventContext.Provider value={context}>
+                  <CourseSideBar/>
                   <div className="payment-process">
                         <StepProgress steps={getSteps()}/>
                         <div className="steps-container">
@@ -86,7 +86,7 @@ export default ({match})=>{
                               <PaymentCompletion/>
                         </div>
                   </div>
-            </CourseContext.Provider>
+            </EventContext.Provider>
       </div>
       
       );
