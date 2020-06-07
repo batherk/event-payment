@@ -28,6 +28,7 @@ const Form = () => {
 
   const { currentStep, setCurrentStep } = useContext(CourseContext).step;
   const { setToken }= useContext(CourseContext).token;
+  const { setUserFeedBack } = useContext(CourseContext).feedback;
   const [validInput, setValidInput] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -44,10 +45,11 @@ const Form = () => {
 
   const getToken = async (event) => {
     setCurrentStep(4)
+    setUserFeedBack("Using smoke signals to communicate with Stripe")
 
     const { token, error } = await stripe.createToken(elements.getElement(CardElement))
     if (error){
-      console.log(error)
+      setUserFeedBack(`Got this error from stripe ${error}`)
     }else{
       setToken(token.id)
     }

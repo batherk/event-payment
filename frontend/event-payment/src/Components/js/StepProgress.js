@@ -6,6 +6,7 @@ import { CourseContext } from '../../contexts'
 export default (props) => {
 
     const {currentStep, setCurrentStep} = useContext(CourseContext).step;
+    const { userFeedBack } = useContext(CourseContext).feedback;
 
     const stepIdentifier = (index)=> {
         if(currentStep===index+1){
@@ -25,7 +26,7 @@ export default (props) => {
 
   return (
     <div className="step-progress">
-        {props.steps.map((step,index)=>{
+        {currentStep <= props.steps.length? props.steps.map((step,index)=>{
             return (
                 <div className={stepIdentifier(index)} onClick={(e)=>{wantToSetCurrentStep(index)}}>
                     <div className="step-number">
@@ -33,8 +34,16 @@ export default (props) => {
                     </div>
                     <p>{step}</p>
                 </div>
-                
-        )})}
+                )
+            })
+            :
+            <div className={"step step-current"}>
+                <div className="step-number">
+                    <h3>{currentStep}</h3>
+                </div>
+                <p>{userFeedBack}</p>
+            </div>
+        }
     </div>
   );
 }

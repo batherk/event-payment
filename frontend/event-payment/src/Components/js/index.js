@@ -11,5 +11,6 @@ import CourseSideBar from './CourseSideBar'
 import StepProgress from './StepProgress'
 import PersonalForm from './PersonalForm'
 import PaymentForm from './PaymentForm'
+import PaymentCompletion from './PaymentCompletion'
 
-export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList, CourseSideBar, StepProgress, PersonalForm, PaymentForm}
+export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList, CourseSideBar, StepProgress, PersonalForm, PaymentForm, PaymentCompletion }

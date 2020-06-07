@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../css/course.css';
-import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm } from './../../Components/js'
+import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm, PaymentCompletion } from './../../Components/js'
 import {CourseContext} from '../../contexts'
 
 export default ({match})=>{
@@ -12,6 +12,7 @@ export default ({match})=>{
       const [phone, setPhone] = useState("");
       const [currentStep,setCurrentStep] = useState(1)
       const [token,setToken] = useState(null)
+      const [userFeedBack,setUserFeedBack] = useState("")
 
       const states = {
             'step':{currentStep, setCurrentStep}, 
@@ -20,8 +21,11 @@ export default ({match})=>{
             'name':{name, setName},
             'email':{email, setEmail},
             'phone':{phone, setPhone},
-            'token':{token,setToken}
+            'token':{token,setToken}, 
+            'feedback':{userFeedBack, setUserFeedBack},
       }
+
+      
 
       const getSteps = () => {
             if (currentStep===1){
@@ -37,8 +41,31 @@ export default ({match})=>{
       }
 
       useEffect(()=>{
+            if (userFeedBack==="Payment Complete"){
+                  console.log("Woho")
+            }
+      }, [userFeedBack])
+
+      useEffect(()=>{
             if(token!==null){
-                  console.log(`Gonna send ${token}to backend`)
+                  setUserFeedBack("Contacting the server with morse code")
+                  const url = `http://localhost:8000/coursepayments/`
+
+                  fetch(url, {
+                        method: 'POST',
+                        headers: {
+                              'Accept': 'application/json',
+                              'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                              pass_type: pass.id,
+                              buyer_name: name,
+                              buyer_email: email,
+                              buyer_phone: phone,
+                        })
+                  })
+                  .then((response)=>{return response.json()})
+                  .then((json)=>{setUserFeedBack(json.detail);setCurrentStep(5)})
             }
       },[token])
 
@@ -62,6 +89,7 @@ export default ({match})=>{
                               <PassList passes={course.passes}/>
                               <PersonalForm/>
                               <PaymentForm/>
+                              <PaymentCompletion/>
                         </div>
                   </div>
             </CourseContext.Provider>
