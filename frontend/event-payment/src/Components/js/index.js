@@ -7,10 +7,11 @@ import HamburgerMenu from './HamburgerMenu'
 import Pass from './Pass'
 import PassList from './PassList'
 import CourseList from './CourseList'
+import EventList from './EventList'
 import CourseSideBar from './CourseSideBar'
 import StepProgress from './StepProgress'
 import PersonalForm from './PersonalForm'
 import PaymentForm from './PaymentForm'
 import PaymentCompletion from './PaymentCompletion'
 
-export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, CourseList, CourseSideBar, StepProgress, PersonalForm, PaymentForm, PaymentCompletion }
+export {TextBox, Image, Parallax, App, Hamburger, HamburgerMenu, Pass, PassList, EventList, CourseList, CourseSideBar, StepProgress, PersonalForm, PaymentForm, PaymentCompletion }
