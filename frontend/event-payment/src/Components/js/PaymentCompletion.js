@@ -5,7 +5,7 @@ import { Parallax } from '.'
 
 export default () => {
 
-    const { currentStep } = useContext(CourseContext).step;
+    const { currentStep } = useContext(CourseContext);
     const text = "I hope you will enjoy the classes :) <br/>After a couple of updates you will get a confirmation mail." 
 
     const getIdentifiers = () => {

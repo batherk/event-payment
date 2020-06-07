@@ -5,8 +5,7 @@ import { CourseContext } from '../../contexts'
 
 export default (props) => {
 
-    const {currentStep, setCurrentStep} = useContext(CourseContext).step;
-    const { userFeedBack } = useContext(CourseContext).feedback;
+    const {currentStep, setCurrentStep, userFeedBack } = useContext(CourseContext);
 
     const stepIdentifier = (index)=> {
         if(currentStep===index+1){

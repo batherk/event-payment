@@ -6,8 +6,7 @@ import { CourseContext } from '../../contexts'
 
 export default (props) => {
 
-  const { setPass} = useContext(CourseContext).pass
-  const { setCurrentStep } = useContext(CourseContext).step
+  const { setPass, setCurrentStep} = useContext(CourseContext)
 
   const imageUrl=()=>{
     if(props.pass.role==='leader'){

@@ -4,9 +4,7 @@ import { CourseContext } from '../../contexts'
 
 export default (props) => {
 
-    const { course } = useContext(CourseContext).course;
-    const { pass } = useContext(CourseContext).pass
-    const { currentStep } = useContext(CourseContext).step
+    const { course, pass, currentStep } = useContext(CourseContext);
     
 
   return (

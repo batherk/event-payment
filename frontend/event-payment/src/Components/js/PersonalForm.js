@@ -5,10 +5,7 @@ import { CourseContext } from '../../contexts'
 
 export default (props)=>{
 
-    const { name, setName } = useContext(CourseContext).name
-    const { email, setEmail } = useContext(CourseContext).email
-    const { phone, setPhone } = useContext(CourseContext).phone
-    const { currentStep, setCurrentStep } = useContext(CourseContext).step
+    const { name, setName, email, setEmail, phone, setPhone, currentStep, setCurrentStep } = useContext(CourseContext)
 
     const getIdentifiers = () => {
       if (currentStep===2){

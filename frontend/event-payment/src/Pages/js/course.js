@@ -14,15 +14,9 @@ export default ({match})=>{
       const [token,setToken] = useState(null)
       const [userFeedBack,setUserFeedBack] = useState("")
 
-      const states = {
-            'step':{currentStep, setCurrentStep}, 
-            'course':{course, setCourse},
-            'pass':{pass, setPass},
-            'name':{name, setName},
-            'email':{email, setEmail},
-            'phone':{phone, setPhone},
-            'token':{token,setToken}, 
-            'feedback':{userFeedBack, setUserFeedBack},
+      const context = {currentStep, setCurrentStep, course, setCourse,
+            pass, setPass, name, setName, email, setEmail, phone, setPhone, token,setToken, 
+            userFeedBack, setUserFeedBack
       }
 
       
@@ -81,7 +75,7 @@ export default ({match})=>{
 
   return (
       <div className="course-page">
-            <CourseContext.Provider value={states}>
+            <CourseContext.Provider value={context}>
                   <CourseSideBar info={course}/>
                   <div className="payment-process">
                         <StepProgress steps={getSteps()}/>
