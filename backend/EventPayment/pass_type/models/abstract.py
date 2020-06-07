@@ -24,8 +24,11 @@ class AbstractPass(models.Model):
         payments_related_name = f"{self.get_event()._meta.model_name}_payments"
         return getattr(self,payments_related_name)
 
+    def sold_spots(self):
+        return self.get_payments().count()
+
     def remaining_spots(self):
-        return self.total_spots - self.get_payments().count()
+        return self.total_spots - self.sold_spots()
 
     def sold_out(self):
         return self.remaining_spots() <= 0
