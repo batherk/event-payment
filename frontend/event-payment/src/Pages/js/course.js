@@ -25,9 +25,9 @@ export default ({match})=>{
             if (currentStep===1){
                   return ['Choose pass', 'Submit personal info','Pay']
             }else if(currentStep===2){
-                  return [`Chosen pass: ${pass.role}`, 'Submit personal info','Pay']
+                  return ['Chosen pass', 'Submit personal info','Pay']
             }else if(currentStep===3){
-                  return [`Chosen pass: ${pass.role}`, 'Submitted personal info','Pay']
+                  return ['Chosen pass', 'Submitted personal info','Pay']
             }else{
                   return ['Choose pass', 'Submit personal info','Pay']
             }

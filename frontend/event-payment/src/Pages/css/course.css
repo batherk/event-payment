@@ -29,18 +29,18 @@
     top: 10vh;
 }
 
+.payment-process .future-process-step, 
+.payment-process .completed-process-step{
+    z-index:1;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
 .payment-process .current-process-step{
     left: 50%;
     transform: translateX(-50%);
     z-index:2;
     opacity: 1;
-    transition: all ease-in-out 0.5s;
-}
-
-.payment-process .future-process-step, 
-.payment-process .completed-process-step{
-    z-index:1;
-    opacity: 0;
     transition: all ease-in-out 0.5s;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .payment-process .future-process-step{
-    left: 100%;
+    left: 80%;
     transform: translateX(50%);
     transition: all ease-in-out 0.5s;
 }

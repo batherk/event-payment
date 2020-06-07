@@ -23,3 +23,8 @@
     color: var(--primary-color);
     
 }
+
+.course__side-bar h3.pass-info{
+    color: var(--primary-color-darker);
+    
+}
