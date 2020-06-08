@@ -59,8 +59,20 @@ export default ({match})=>{
                               buyer_phone: phone,
                         })
                   })
-                  .then((response)=>{return response.json()})
-                  .then((json)=>{setUserFeedBack(json.detail);setCurrentStep(5)})
+                  .then((response)=>{
+                        if (response.status === 400) {
+                              response.json().then((data)=> {
+                                    setUserFeedBack(data.detail)
+                              })
+                        }
+                        
+                        else if (response.status === 200) {
+                              response.json().then((data)=> {
+                                    setUserFeedBack(data.detail)
+                                    setCurrentStep(5)
+                              })
+                        }
+                  })
             }
             // eslint-disable-next-line react-hooks/exhaustive-deps
       },[token])

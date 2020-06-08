@@ -12,8 +12,9 @@ class CoursePassPaymentViewSet(mixins.CreateModelMixin,
 
     def create(self, request):
         serializer = CoursePassPaymentSerializer(data=request.data, context={"request": request})
-        serializer.is_valid(raise_exception=True)
-        CoursePassPayment.create(serializer.validated_data)
-        return Response({'detail':'Payment complete'})
+        if serializer.is_valid():
+            CoursePassPayment.create(serializer.validated_data)
+            return Response({'detail':'Payment complete'})
+        return Response({'detail':'Payment was aborted because of invalid personal data', 'errors':serializer.errors}, 400)
 
 
