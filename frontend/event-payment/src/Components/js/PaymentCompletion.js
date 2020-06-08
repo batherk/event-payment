@@ -5,8 +5,8 @@ import { Parallax } from '.'
 
 export default () => {
 
-    const { currentStep } = useContext(EventContext);
-    const text = "I hope you will enjoy the classes :) <br/>After a couple of updates you will get a confirmation mail." 
+    const { currentStep, eventType } = useContext(EventContext);
+    const text = `I hope you will enjoy the ${eventType} :) <br/>After a couple of updates you will get a confirmation mail.`
 
     const getIdentifiers = () => {
         if (currentStep===5){
