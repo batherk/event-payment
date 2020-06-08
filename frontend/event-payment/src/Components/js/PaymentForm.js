@@ -19,8 +19,8 @@ const options = {style: {
     },
   },
   invalid: {
-    color: '#9e2146',
-    iconColor: '#ffc7ee',
+    color: '#ffffff',
+    iconColor: '#e2201a',
   },
 },}
 
@@ -29,16 +29,27 @@ const Form = () => {
   const { currentStep, setCurrentStep, setToken, setUserFeedBack } = useContext(EventContext);
   
   const [validInput, setValidInput] = useState(false);
+  const [inputError, setInputError] = useState(null);
   const stripe = useStripe();
   const elements = useElements();
 
-  const getIdentifiers = () => {
+  const getProcessIdentifiers = () => {
     if (currentStep===3){
       return "payment-form process-step current-process-step"
     }else if (currentStep>3){
       return "payment-form process-step completed-process-step"
     }else{
       return "payment-form process-step future-process-step"
+    }
+  }
+
+  const getContainerIdentifiers = () => {
+    if(validInput){
+      return "stripe-container card-valid"
+    }else if (inputError){
+      return "stripe-container card-error"
+    }else{
+      return "stripe-container"
     }
   }
 
@@ -54,10 +65,11 @@ const Form = () => {
     }
   }
 
+
   return (
-    <div className={getIdentifiers()}>
-      <div className={validInput?"stripe-container valid":"stripe-container"}>
-        <CardElement options={options} onChange={(e)=>{setValidInput(e.complete)}}/>
+    <div className={getProcessIdentifiers()}>
+      <div className={getContainerIdentifiers()}>
+        <CardElement options={options} onChange={(e)=>{setValidInput(e.complete);setInputError(e.error)}}/>
       </div>
       <button className="payment-button" disabled={!stripe || !validInput} onClick={getToken}>Pay</button>
     </div>
