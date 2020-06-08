@@ -1,5 +1,6 @@
-from rest_framework import mixins, viewsets
+from rest_framework import mixins, viewsets, serializers
 from rest_framework.response import Response
+import stripe
 
 from payment.serializers import CoursePassPaymentSerializer
 from payment.models import CoursePassPayment
@@ -12,9 +13,14 @@ class CoursePassPaymentViewSet(mixins.CreateModelMixin,
 
     def create(self, request):
         serializer = CoursePassPaymentSerializer(data=request.data, context={"request": request})
-        if serializer.is_valid():
+        try: 
+            serializer.is_valid(raise_exception=True)
             CoursePassPayment.create(serializer.validated_data)
             return Response({'detail':'Payment complete'})
-        return Response({'detail':'Payment was aborted because of invalid personal data', 'errors':serializer.errors}, 400)
+        except serializers.ValidationError:
+            return Response({'detail':'Payment was aborted because of invalid personal data'}, 400)
+        except stripe.error.StripeError as error:
+            print(error)
+            return Response({'detail':'Payment was aborted because of an error with the payment provider'}, 400)
 
 

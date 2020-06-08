@@ -17,9 +17,12 @@ class EventPassPayment(AbstractPassPayment):
 
     @classmethod
     def create(cls, data):
-        cls.pay_online(**data)
+        token_id = data.pop('token_id')
+        price = EventPass.objects.get(id=data['pass_type'].id).price
+        description = "Test"
+
+        cls.pay_online(token_id=token_id,price=price,description=description)
 
         data['paid_online'] = True
-        data.pop('token_id')
         payment = EventPassPayment(**data)
         payment.save()
