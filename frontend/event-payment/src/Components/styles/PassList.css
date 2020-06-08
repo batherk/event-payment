@@ -7,19 +7,19 @@
 /* one item */
 .pass:first-child:nth-last-child(1) {
 /* -or- li:only-child { */
-    width: 60%;
+    width: 25%;
 }
 
 /* two items */
 .pass:first-child:nth-last-child(2),
 .pass:first-child:nth-last-child(2) ~ .pass {
-    width: 30%;
+    width: 20%;
 }
 
 /* three items */
 .pass:first-child:nth-last-child(3),
 .pass:first-child:nth-last-child(3) ~ .pass {
-    width: 20%;
+    width: 18%;
 }
 
 /* four items */
@@ -32,3 +32,12 @@
     width: 90%;
     height: 100%;
 }
+
+.pass:first-of-type{
+    margin-left:20vh;
+}
+
+.pass:last-of-type{
+    margin-right: 20vh;
+}
+
