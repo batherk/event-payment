@@ -21,6 +21,7 @@ class CoursePassPayment(AbstractPassPayment):
         cls.pay_online(**data)
 
         data['paid_online'] = True
+        data.pop('token_id')
         payment = CoursePassPayment(**data)
         payment.save()
 

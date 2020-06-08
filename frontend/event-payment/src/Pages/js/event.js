@@ -51,6 +51,7 @@ export default ({match})=>{
                               buyer_name: name,
                               buyer_email: email,
                               buyer_phone: phone,
+                              token_id: token,
                         })
                   })
                   .then((response)=>{
