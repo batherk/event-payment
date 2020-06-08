@@ -7,13 +7,23 @@ import { Parallax } from '.';
 
 export default (props) => {
 
-  const { event, currentStep } = useContext(EventContext)
+  const { event, currentStep, eventType } = useContext(EventContext)
 
   const getIdentifiers = () => {
     if (currentStep===1){
       return "pass-list process-step current-process-step"
     }else{
       return "pass-list process-step completed-process-step"
+    }
+  }
+
+  const soldOutElement = () => {
+    if(eventType==="classes"){
+      return <Parallax title="Sorry!" text={"There are unfortunately not any available spots left to these classes.<br/>Check out one of the others :)"} 
+      imageURL="Talal.jpg" imageSide="right" link="/courses" linkText="More classes"/>
+    }else{
+      return <Parallax title="Sorry!" text={"There are unfortunately not any available spots left to the event.<br/>Check out one of the others :)"} 
+      imageURL="Talal.jpg" imageSide="right" link="/events" linkText="More events"/>
     }
   }
 
@@ -24,7 +34,7 @@ export default (props) => {
           event.passes_left.map((pass,index)=>{
             return <Pass pass={pass}/>
         }):
-        <Parallax title="Sorry!" text={"There are unfortunately not any available spots left to this class.<br/>Check out one of the others :)"} imageURL="Talal.jpg" imageSide="right"/>
+        soldOutElement()
       )}
     </div>
   );

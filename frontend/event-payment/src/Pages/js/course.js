@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import '../css/course.css';
+import '../css/event.css';
 import { CourseSideBar, PassList, StepProgress, PersonalForm, PaymentForm, PaymentCompletion } from './../../Components/js'
 import {EventContext} from '../../contexts'
 
 export default ({match})=>{
 
       const [event, setEvent] = useState(null);
+      const [eventType, setEventType] = useState("classes");
       const [pass, setPass] = useState(null);
       const [name, setName] = useState("");
       const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export default ({match})=>{
 
       const context = {currentStep, setCurrentStep, event, setEvent,
             pass, setPass, name, setName, email, setEmail, phone, setPhone, token,setToken, 
-            userFeedBack, setUserFeedBack
+            userFeedBack, setUserFeedBack, eventType, setEventType
       }
 
       
