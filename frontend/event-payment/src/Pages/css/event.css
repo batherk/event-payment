@@ -33,7 +33,8 @@
 .payment-process .completed-process-step{
     z-index:1;
     opacity: 0;
-    transition: all ease-in-out 0.5s;
+    transition: var(--transition);
+    scale:0.7;
 }
 
 .payment-process .current-process-step{
@@ -41,19 +42,20 @@
     transform: translateX(-50%);
     z-index:2;
     opacity: 1;
-    transition: all ease-in-out 0.5s;
+    transition: var(--transition);
+    scale:1;
 }
 
 .payment-process .completed-process-step{
     left: -50%;
     transform: translateX(0);
-    transition: all ease-in-out 0.5s;
+    transition: var(--transition);
 }
 
 .payment-process .future-process-step{
     left: 80%;
     transform: translateX(50%);
-    transition: all ease-in-out 0.5s;
+    transition: var(--transition);
 }
 
 
