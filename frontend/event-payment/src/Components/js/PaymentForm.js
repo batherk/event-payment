@@ -59,7 +59,7 @@ const Form = () => {
 
     const { token, error } = await stripe.createToken(elements.getElement(CardElement))
     if (error){
-      setUserFeedBack(`Got this error from stripe ${error}`)
+      setUserFeedBack('Payment aborted. There was an error with the payment card')
     }else{
       setToken(token.id)
     }
