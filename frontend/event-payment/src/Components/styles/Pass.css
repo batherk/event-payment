@@ -13,7 +13,8 @@
 
 .pass__text{
     position: relative;
-    width: 150%;
+    width: 95%;
+    padding-left: 5%;
     transform: translateY(-100%);
     height: auto;
     background-color:rgb(0, 0, 0, 0.7);
