@@ -36,12 +36,6 @@ export default ({match})=>{
       }
 
       useEffect(()=>{
-            if (userFeedBack==="Payment Complete"){
-                  console.log("Woho")
-            }
-      }, [userFeedBack])
-
-      useEffect(()=>{
             if(token!==null){
                   setUserFeedBack("Contacting the server with morse code")
                   const url = `http://localhost:8000/coursepayments/`
