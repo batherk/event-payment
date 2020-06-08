@@ -16,7 +16,7 @@ export default () => {
   return (
     <div className="events">
         {events.map((event,index)=>{
-          const text = `Start: ${event.date_start}<br>End: ${event.date_end}<br>Description: ${event.description}`
+          const text = `Start: ${event.date_start}<br>End: ${event.date_end}<br>${event.description}`
           return <Parallax title={event.name} imageSide={index % 2 === 0 ? "left" : "right"} imageURL="Talal.jpg" text={text} link={`/events/${event.id}`} linkText="Buy pass"/>
         })}
     </div>

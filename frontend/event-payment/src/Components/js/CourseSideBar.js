@@ -21,7 +21,7 @@ export default (props) => {
                     {pass && currentStep!==1?<h3 className="pass-info">Pass: {capitalizeFirst(pass.role)}</h3>:null}
                     {pass && currentStep!==1?<h3 className="pass-info">Price: {pass.price} EUR</h3>:null}
                     <h3>Week: {event.week_start} - {event.week_end}</h3>
-                    <h3>Day: {event.day}s</h3>
+                    <h3>Day: {capitalizeFirst(event.day)}s</h3>
                     <h3>Time: {event.time_start} - {event.time_end}</h3>
                     <h3>Year: {event.year}</h3>
                     <h3><a href={event.address} target='_blank' rel="noopener noreferrer">Address</a></h3>
