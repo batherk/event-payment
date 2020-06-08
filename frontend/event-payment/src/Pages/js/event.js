@@ -62,6 +62,7 @@ export default ({match})=>{
                   .then((response)=>{return response.json()})
                   .then((json)=>{setUserFeedBack(json.detail);setCurrentStep(5)})
             }
+            // eslint-disable-next-line react-hooks/exhaustive-deps
       },[token])
 
 
@@ -72,6 +73,7 @@ export default ({match})=>{
             .then((json)=>{
                   setEvent(json);
             });
+            // eslint-disable-next-line react-hooks/exhaustive-deps
       },[]);
 
   return (
