@@ -26,9 +26,7 @@ export default (props) => {
 
   return (
     <div className="pass" onClick={(e)=>{setPass(props.pass);setCurrentStep(2)}}>
-      <div className="image">
-        <img src={'/img/' + imageUrl()} alt=""/>
-      </div>
+      <Image url={imageUrl()}/>
       <div className="pass__text">
         {props.pass.name?<h2 className="pass__name">{capitalizeFirst(props.pass.name)}</h2>:null}
         <h2 className="pass__role">{capitalizeFirst(props.pass.role)}</h2>
