@@ -3,7 +3,7 @@
 up: ##@Docker (start) Start the webserver on http://localhost:8000
 	docker-compose up
 
-up-build: ##@Docker (start) Start the webserver on http://localhost:8000
+up-b: ##@Docker (start) Start the webserver on http://localhost:8000
 	docker-compose up --build
 
 up-d: ##@Docker (start) Start the webserver on http://localhost:8000, in the background

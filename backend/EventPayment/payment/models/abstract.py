@@ -15,6 +15,9 @@ class AbstractPassPayment(models.Model):
     buyer_phone = models.CharField(max_length=80)
     buyer_email = models.EmailField()
 
+    class Meta:
+        abstract = True
+
     def save(self, *args, **kwargs):
         if not self.pk:
             self.price = self.get_pass_type().price
