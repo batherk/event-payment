@@ -44,7 +44,7 @@ export default ({match})=>{
       useEffect(()=>{
             if(token!==null){
                   setUserFeedBack("Contacting the server with morse code")
-                  const url = `http://localhost:8000/coursepayments/`
+                  const url = `http://localhost:8000/eventpayments/`
 
                   fetch(url, {
                         method: 'POST',
