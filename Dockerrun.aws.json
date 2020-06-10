@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "backend",
+        "image": "batherk/event-payment",
+        "links": [
+            "db"
+          ],
+        "essential": false,
+        "memory": 128,
+        "portMappings": [
+            {
+              "hostPort": 8000,
+              "containerPort": 80
+            }
+          ]
+      },
+      {
+        "name": "db",
+        "image": "postgres",
+        "essential": true,
+        "memory": 128
+      }
+    ]
+  }
