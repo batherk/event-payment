@@ -94,11 +94,12 @@ WSGI_APPLICATION = 'EventPayment.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'ENGINE': os.environ.get('DB_ENGINE'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PASSWORD':os.environ.get('DB_PASSWORD'),
+        'PORT': os.environ.get('DB_PORT'),
     }
 }
 

@@ -5,15 +5,11 @@ services:
     build: ./backend/
     command: python backend/EventPayment/manage.py runserver 0.0.0.0:8000
     env_file:
-      - .env
+      - .env.dev
     volumes:
       - .:/EventPayment
     ports:
       - "8000:8000"
-    depends_on:
-    - db
-  db:
-    image: postgres
   frontend:
     build: ./frontend/
     stdin_open: true
